@@ -37,10 +37,10 @@ exports.handler =  function(credentials) {
 }
 
 exports.main = async function(signer) {
-    const KNIGHTContractAddress='0x9ab27A62130D56eFc4F8CF69717Ef3BD56103A90';           //mKNIGHT Contract Address on Rinkeby 
+    const KNIGHTContractAddress='0xE32Fb9Bba28eD042559E4D132194C80E08a05B8c';           //mKNIGHT Contract Address on Rinkeby 
     const instance = new ethers.Contract(KNIGHTContractAddress, ERC20_ABI, signer);
     const RewardRate = ethers.utils.parseUnits('100');                                 //100mKNIGHT tokens as the RewardRate
-    const StakingContractAddress = '0xD537D030b871BE2d5d99257bd4781a434639AB2f';       //Staking Contract Address on Rinkeby
+    const StakingContractAddress = '0xda825205C218257e193C276AB2625E8f26D19E89';       //Staking Contract Address on Rinkeby
  
 	try {  const SendTX = await instance.transfer(StakingContractAddress,RewardRate);   //Transfer mKNIGHT to the Staking Contract on Rinkeby
 				return SendTX;
